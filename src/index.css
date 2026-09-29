@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", "Cinzel", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-brand-bg: #f4f6f5;
+  --color-brand-card: #ffffff;
+  --color-brand-gold: #0d5c4d;
+  --color-brand-gold-hover: #084338;
+  --color-brand-accent-gold: #b38f4d;
+  --color-brand-accent-gold-hover: #997839;
+  --color-brand-cream: #0f172a;
+  --color-brand-cream-dim: #475569;
+  --color-brand-border: rgba(13, 92, 77, 0.16);
+  --color-brand-border-dim: rgba(13, 92, 77, 0.08);
+}
+
+/* Custom scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f4f6f5;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(13, 92, 77, 0.2);
+  border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 92, 77, 0.4);
+}

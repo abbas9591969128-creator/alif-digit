@@ -1,0 +1,113 @@
+{
+  "entities": {
+    "Match": {
+      "title": "Match",
+      "description": "An educational Islamic competition match format",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 150,
+          "description": "Title of the match/competition"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "General description and guidelines"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["Quran Recitation", "Islamic Speech", "Hafiz Challenge", "Islamic Quiz"],
+          "description": "The category of the match"
+        },
+        "date": {
+          "type": "string",
+          "maxLength": 30,
+          "description": "Date of the competition"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Upcoming", "Active", "Completed"],
+          "description": "Active status of the match"
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Physical hall or online platform"
+        },
+        "reward": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Award, trophy or certificate details"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp in ISO format"
+        }
+      },
+      "required": ["title", "type", "date", "status", "location"]
+    },
+    "Candidate": {
+      "title": "Candidate",
+      "description": "A competitor enrolled in an Islamic match",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100,
+          "description": "Candidate's full name"
+        },
+        "age": {
+          "type": "number",
+          "description": "Candidate's age"
+        },
+        "location": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "Candidate's district or hometown"
+        },
+        "matchId": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Document ID reference of the target match"
+        },
+        "score": {
+          "type": "number",
+          "description": "Examiner score out of 100"
+        },
+        "contact": {
+          "type": "string",
+          "maxLength": 50,
+          "description": "Candidate contact phone or email"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000,
+          "description": "Examiner feedback notes"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Registered", "Qualified", "Winner", "Runner-up"],
+          "description": "Official candidate standing in the match"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Creation timestamp in ISO format"
+        }
+      },
+      "required": ["name", "age", "matchId", "score", "status"]
+    }
+  },
+  "firestore": {
+    "matches": {
+      "schema": "Match",
+      "description": "Matches collection containing official competition registrations"
+    },
+    "candidates": {
+      "schema": "Candidate",
+      "description": "Candidates collection with enrollment profiles and scoring details"
+    }
+  }
+}
